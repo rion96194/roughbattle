@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="windows-31j" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ラフバトル！</title>
+
+<!-- リセットCSSの読み込み -->
+<link href="./css/reset.css" rel="stylesheet" type="text/css">
+<!-- オリジナルCSSの読み込み -->
+<!-- <link href="./css/original.css" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" media="(min-width: 640px)" href="./css/style_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="./css/style_mobile.css">
+<!-- Magnific PopupのCSS読み込み -->
+<link rel="stylesheet" href="css/magnific-popup.css" />
+
+<link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/start/jquery-ui.css" rel="stylesheet" />
+<!-- jQuery読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<!-- Magnific PopupのJS読み込み -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<!-- フェードインスクリプト -->
+<script>
+   jQuery(function($){
+       $('body').fadeIn(2000);
+       $(window).on("beforeunload",function(e){
+           $('body').fadeOut();
+       });
+   });
+</script>
+<!-- ブラウザの戻るボタン禁止 -->
+<script>
+  history.forward();
+</script>
+
+<script type="text/javascript" src="./js/shop.js"></script>
+
+</head>
+<body oncontextmenu="return false;">
+  <script>document.body.style.display = 'none';</script>
+  <br>
+  <br>
+  <div id="container-fluid">
+    <table class="table_shop" border="1" cellspacing="0" cellpadding="4">
+    	<tbody>
+    		<tr>
+          <td colspan="4" height="200px">
+            <center>
+              <img src="./img/shop_gendou.png">
+            </center>
+          </td>
+    		</tr>
+        <tr>
+    			<td id="result" colspan="4" height="100px"></td>
+    		</tr
+    		<tr>
+    			<td width="25%" height="30" align="center">アイテム名</td>
+    			<td width="25%" height="30" align="center">説明</td>
+    			<td width="25%" height="30" align="center">消費ゴールド</td>
+    			<td width="25%" height="30" align="center"></td>
+    		</tr>
+    		<tr>
+    			<td width="25%" height="30" align="center">全回復</td>
+    			<td width="25%" height="30" align="left">HP・MPを回復する</td>
+    			<td width="25%" height="30" align="center">10</td>
+    			<td id="item_recovery" class="tb_shop_select" width="25%" height="30" align="center"><a href="#" class="itemselect" data-item="全回復" style="text-decoration:none;" onClick="shop(); return false;">購入する</a></td>
+    		</tr>
+        <tr>
+          <td colspan="4" style="border-left-style: hidden; border-right-style: hidden; border-bottom-style: hidden;">
+            <br>
+            <br>
+            <center><a href="character.html">店を出る</a></center>
+          </td>
+    	</tbody>
+    </table>
+
+  </div>
+  <div id="popup_recovery" class="whitepopup" style="display:none">
+    <center>
+      <table>
+      	<tbody>
+      		<tr>
+      			<td colspan="2" align="center">「全回復」を購入するのか？</td>
+      		</tr>
+      		<tr>
+      			<td width="50%" height="30" align="center"><a href="" class="recoveryselect" id="recovery_yes">はい</a></td>
+      			<td width="50%" height="30" align="center"><a href="" class="recoveryselect" id="recovery_no">いいえ</a></td>
+      		</tr>
+      	</tbody>
+      </table>
+    </center>
+  </div>
+
+  <div id="popup_recovery_none" class="whitepopup" style="display:none">
+    <center>
+      HP、MPともに全回復してるぞ。<br><br>
+      <a href="" class="recoveryselect" id="recovery_none">閉じる</a>
+    </center>
+  </div>
+</body>
+</html>

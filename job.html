@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="windows-31j" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ラフバトル！</title>
+
+<!-- リセットCSSの読み込み -->
+<link href="./css/reset.css" rel="stylesheet" type="text/css">
+<!-- オリジナルCSSの読み込み -->
+<!-- <link href="./css/original.css" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" media="(min-width: 640px)" href="./css/style_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="./css/style_mobile.css">
+<!-- jQuery読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- フェードインスクリプト -->
+<script>
+   jQuery(function($){
+       $('body').fadeIn(2000);
+       $(window).on("beforeunload",function(e){
+           $('body').fadeOut();
+       });
+   });
+</script>
+<!-- 名前取得スクリプト -->
+<script type="text/javascript" language="javascript">
+  function nameget_warrior(){
+    var charactername = document.getElementById("txt_name").value;
+    if(charactername == ""){
+      alert("名前を入力してください");
+    }
+    else{
+      localStorage.setItem("c_name", charactername);
+      window.open("character.html?warrior", "_self", "");
+    }
+  }
+  function nameget_witch(){
+    var charactername = document.getElementById("txt_name").value;
+    if(charactername == ""){
+      alert("名前を入力してください");
+    }
+    else{
+      localStorage.setItem("c_name", charactername);
+      window.open("character.html?witch", "_self", "");
+    }
+  }
+</script>
+
+</head>
+<body oncontextmenu="return false;">
+  <script>document.body.style.display = 'none';</script>
+  <div class="container-fluid">
+    <center>
+      <br>
+      名前を入力してください
+      <br>
+      <br>
+      <input type="text" id="txt_name" name="charaname" size="30" style="text-align: center;">
+      <br>
+      <br>
+      職業を選択してください
+      <br>
+      <br>
+      <table class="table_job" border="1" cellspacing="0" cellpadding="4">
+  	    <tbody>
+      		<tr>
+      			<td width="50%" height="100">
+              <center>
+                <!-- <a href="battle.html" id="btn_warrior" class="button_push green" onClick="warrior();return false;">戦士</a> -->
+                <a href="#" class="button_push green", id="pagelink_warrior" onClick="nameget_warrior();">　戦士　</a>
+              </center>
+            </td>
+      			<td>
+              攻撃に特化した職業。魔法は全く扱えないが、自慢の攻撃力で敵を圧倒する。
+            </td>
+      		</tr>
+      		<tr>
+      			<td height="100">
+              <center>
+              <a href="#" class="button_push green" id="pagelink_witch" onClick="nameget_witch(); return false;">魔法使い</a>
+              </center>
+            </td>
+      			<td>
+              魔法攻撃に特化した職業。力は弱いが、多彩な魔法で敵を翻弄する。
+            </td>
+      		</tr>
+      		<tr>
+      			<td></td>
+      			<td></td>
+      		</tr>
+  	    </tbody>
+      </table>
+      <br>
+      <br>
+      ※ ここから先は、ブラウザの「戻る」ボタンを使用しないでください。
+    </center>
+  </div>
+  <!-- <script type="text/javascript" src="./js/job.js"></script> -->
+</body>
+</html>

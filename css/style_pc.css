@@ -1,0 +1,228 @@
+
+/*画面全体*/
+#container-fluid{
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family:'Lucida Grande','Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+}
+
+/* PC用CSS */
+@media print, screen and (min-width: 640px) {
+  /*職業選択テーブル*/
+  .table_job{
+    width: 400px;
+    table-layout: fixed;
+  }
+  /*キャラクターテーブル*/
+  .table_character{
+    width: 500px;
+    table-layout: fixed;
+  }
+  /*バトルテーブル*/
+  .table_battle{
+    width: 500px;
+    table-layout: fixed;
+  }
+  /*魔法【ポップアップ）テーブル*/
+  .table_magic{
+    width: 500px;
+    table-layout: fixed;
+  }
+  /*ショップテーブル*/
+  .table_shop{
+    width: 500px;
+    table-layout: fixed;
+  }
+
+  /*キャラクター　下のコマンド選択タブ*/
+  .tb_ch_link td{
+    background-color: #ececec;
+    line-height: 2.5em;
+    text-align: center;
+    vertical-align:middle;
+  }
+  .tb_ch_link td a{
+    display:block;
+    width:100%;
+    height:100%;
+  }
+  .tb_ch_link td a:hover {
+    background-color: #f49d9d;
+　 }
+
+  /*魔法テーブル　選択*/
+  .tb_magic_select {
+    line-height: 2.5em;
+    text-align: center;
+    vertical-align:middle;
+  }
+  .tb_magic_select a{
+    display:block;
+    width:100%;
+    height:100%;
+  }
+  .tb_magic_select a:hover{
+    background-color: #f49d9d;
+  }
+
+  /*ショップ　選択*/
+  .tb_shop_select {
+    line-height: 2.5em;
+    text-align: center;
+    vertical-align:middle;
+  }
+  .tb_shop_select a{
+    display:block;
+    width:100%;
+    height:100%;
+  }
+  .tb_shop_select a:hover{
+    background-color: #f49d9d;
+  }
+
+  /*バトル画面コマンドボタン*/
+  .btn_command{
+    font-size: 1.0em;
+    padding: 10px;
+  }
+
+  /*各種ポップアップ用*/
+  .whitepopup {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+
+
+  /*トップ画面ボタン設定*/
+  .button_top {
+  	font-family: Arial, Helvetica, sans-serif;
+  	font-size: 14px;
+  	color: #ffffff;
+  	padding: 10px 20px;
+  	background: -moz-linear-gradient(
+  		top,
+  		#f0f0f0 0%,
+  		#b8b8b8 25%,
+  		#6b6b6b 75%,
+  		#424242);
+  	background: -webkit-gradient(
+  		linear, left top, left bottom,
+  		from(#f0f0f0),
+  		color-stop(0.25, #b8b8b8),
+  		color-stop(0.75, #6b6b6b),
+  		to(#424242));
+  	-moz-border-radius: 15px;
+  	-webkit-border-radius: 15px;
+  	border-radius: 15px;
+  	border: 3px solid #171717;
+  	-moz-box-shadow:
+  		0px 1px 3px rgba(000,000,000,0.5),
+  		inset 0px 0px 10px rgba(087,087,087,0.7);
+  	-webkit-box-shadow:
+  		0px 1px 3px rgba(000,000,000,0.5),
+  		inset 0px 0px 10px rgba(087,087,087,0.7);
+  	box-shadow:
+  		0px 1px 3px rgba(000,000,000,0.5),
+  		inset 0px 0px 10px rgba(087,087,087,0.7);
+  	text-shadow:
+  		0px -1px 0px rgba(000,000,000,0.4),
+  		0px 1px 0px rgba(255,255,255,0.3);
+  }
+
+
+
+
+  /*ボタン設定*/
+  /*==========  Structure  ==========*/
+  .button_push {
+    position: relative;
+    top: 0px;
+    font-family: "Open Sans";
+    text-decoration: none;
+    font-size: 14px;
+    background: #f7f7f7;
+    padding: 5px 10px;
+    margin: 0px 0px;
+    border: 1px solid #c4c4c4;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 5px 0px #c4c4c4;
+    -moz-box-shadow: 0px 5px 0px #c4c4c4;
+    -ms-box-shadow: 0px 5px 0px #c4c4c4;
+    -o-box-shadow: 0px 5px 0px #c4c4c4;
+    box-shadow: 0px 5px 0px #c4c4c4;
+    color: #222;
+    text-shadow: 1px 1px 1px #fff;
+    -webkit-transition: All 250ms ease;
+    -moz-transition: All 250ms ease;
+    -o-transition: All 250ms ease;
+    -ms-transition: All 250ms ease;
+    transition: All 250ms ease;
+  }
+  /*==========  Active State  ==========*/
+  .button_push:active {
+    position: relative;
+    top: 5px;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -ms-box-shadow: none !important;
+    -o-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-transition: All 250ms ease;
+    -moz-transition: All 250ms ease;
+    -o-transition: All 250ms ease;
+    -ms-transition: All 250ms ease;
+    transition: All 250ms ease;
+  }
+  .button_push.green {
+    background: #7cc576;
+    color: #fff;
+    border: 1px solid #46963f;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 5px 0px #46963f;
+    -moz-box-shadow: 0px 5px 0px #46963f;
+    -ms-box-shadow: 0px 5px 0px #46963f;
+    -o-box-shadow: 0px 5px 0px #46963f;
+    box-shadow: 0px 5px 0px #46963f;
+    text-shadow: 1px 1px 1px #46963f;
+  }
+
+  .button_push.navy {
+    background: #1b486d;
+    border: 1px solid #07121b;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 5px 0px #07121b;
+    -moz-box-shadow: 0px 5px 0px #07121b;
+    -ms-box-shadow: 0px 5px 0px #07121b;
+    -o-box-shadow: 0px 5px 0px #07121b;
+    box-shadow: 0px 5px 0px #07121b;
+    color: #fff;
+    text-shadow: 1px 1px 1px #07121b;
+  }
+
+  .btn-push.orange {
+    background: #f57936;
+    color: #fff;
+    border: 1px solid #bc4809;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 5px 0px #bc4809;
+    -moz-box-shadow: 0px 5px 0px #bc4809;
+    -ms-box-shadow: 0px 5px 0px #bc4809;
+    -o-box-shadow: 0px 5px 0px #bc4809;
+    box-shadow: 0px 5px 0px #bc4809;
+    text-shadow: 1px 1px 1px #bc4809;
+  }
+}

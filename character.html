@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="windows-31j" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ラフバトル！</title>
+
+<!-- リセットCSSの読み込み -->
+<link href="./css/reset.css" rel="stylesheet" type="text/css">
+<!-- オリジナルCSSの読み込み -->
+<!-- <link href="./css/original.css" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" media="(min-width: 640px)" href="./css/style_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="./css/style_mobile.css">
+<!-- jQuery読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- フェードインスクリプト -->
+<script>
+   jQuery(function($){
+       $('body').fadeIn(2000);
+       $(window).on("beforeunload",function(e){
+           $('body').fadeOut();
+       });
+   });
+</script>
+<!-- ブラウザの戻るボタン禁止 -->
+<script>
+  history.forward();
+</script>
+
+<script type="text/javascript" src="./js/character.js"></script>
+<!-- <script type="text/javascript" src="./js/param.js"></script> -->
+<!-- <script type="text/javascript" src="./js/battle.js"></script> -->
+
+</head>
+<body oncontextmenu="return false;">
+  <script>document.body.style.display = 'none';</script>
+  <br>
+  <br>
+  <div id="container-fluid">
+    <table class="table_character" border="1">
+	    <tbody>
+    		<tr>
+    			<td colspan="3" rowspan="11">
+            <img id="mycharaimg" src="./img/mychara01.png">
+          </td>
+    			<td height="30" align="center">名前</td>
+    			<td id="tb_ch_name" align="center"></td>
+    		</tr>
+        <tr>
+    			<td height="30" align="center">職業</td>
+    			<td id="tb_ch_job" align="center"></td>
+    		</tr>
+    		<tr>
+    			<td height="30" align="center">レベル</td>
+    			<td id="tb_ch_level" align="center"></td>
+    		</tr>
+    		<tr>
+    			<td height="30" align="center">HP</td>
+    			<td id="tb_ch_hp" align="center"></td>
+    		</tr>
+    		<tr>
+    			<td height="30" align="center">MP</td>
+    			<td id="tb_ch_mp" align="center"></td>
+    		</tr>
+    		<tr>
+    			<td height="30" align="center">攻撃</td>
+    			<td id="tb_ch_attack" align="center"></td>
+    		</tr>
+    		<tr>
+    			<td height="30" align="center">防御</td>
+    			<td id="tb_ch_defence" align="center"></td>
+    		</tr>
+    		<tr>
+    			<td height="30" align="center">魔法攻撃</td>
+    			<td id="tb_ch_magicattack" align="center"></td>
+    		</tr>
+    		<tr>
+    			<td height="30" align="center">魔法防御</td>
+    			<td id="tb_ch_magicdefence" align="center"></td>
+    		</tr>
+        <tr>
+    			<td height="30" align="center">素早さ</td>
+    			<td id="tb_ch_speed" align="center"></td>
+    		</tr>
+        <tr>
+    			<td height="30" align="center">所持金</td>
+    			<td id="tb_ch_gold" align="center"></td>
+    		</tr>
+    		<tr>
+    			<td colspan="5" height="20" style="border-left-style: hidden; border-right-style: hidden;"></td>
+    		</tr>
+    		<tr>
+    			<td id="tb_ch_result" colspan="5" height="80"></td>
+    		</tr>
+    		<tr class="tb_ch_link">
+    			<td width="20%" height="30"><a href="battle.html" style="text-decoration:none;"><center>バトル</center></a></td>
+    			<td width="20%" height="30"><center>装備</center></td>
+    			<td width="20%" height="30"><center>魔法</center></td>
+    			<td width="20%" height="30"><center>道具</center></td>
+    			<td width="20%" height="30"><a href="shop.html" style="text-decoration:none;"><center>ショップ</center></a></td>
+    		</tr>
+    	</tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="windows-31j" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ラフバトル！</title>
+
+<!-- リセットCSSの読み込み -->
+<link href="./css/reset.css" rel="stylesheet" type="text/css">
+<!-- オリジナルCSSの読み込み -->
+<!-- <link href="./css/original.css" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" media="(min-width: 640px)" href="./css/style_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="./css/style_mobile.css">
+<!-- Magnific PopupのCSS読み込み -->
+<link rel="stylesheet" href="css/magnific-popup.css" />
+
+<link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/start/jquery-ui.css" rel="stylesheet" />
+<!-- jQuery読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<!-- Magnific PopupのJS読み込み -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<!-- フェードインスクリプト -->
+<script>
+   jQuery(function($){
+       $('body').fadeIn(2000);
+       $(window).on("beforeunload",function(e){
+           $('body').fadeOut();
+       });
+   });
+</script>
+<!-- ブラウザの戻るボタン禁止 -->
+<script>
+  history.forward();
+</script>
+
+<script type="text/javascript" src="./js/battle_set.js"></script>
+<script type="text/javascript" src="./js/battle_attack.js"></script>
+<script type="text/javascript" src="./js/battle_magic.js"></script>
+<script type="text/javascript" src="./js/battle_other.js"></script>
+
+</head>
+<body oncontextmenu="return false;">
+  <script>document.body.style.display = 'none';</script>
+  <br>
+  <br>
+  <div id="container-fluid">
+    <!-- <table border="0">
+    	<tbody>
+    		<tr>
+    			<td id="tb_warrior">
+            <a href="#" id="btn_warrior" class="button_push green" onClick="warrior();return false;">戦士</a>
+            &emsp;
+          </td>
+    			<td id="tb_witch">
+            <a href="#" id="btn_witch" class="button_push green" onClick="witch();return false;">魔法使い</a>
+            &emsp;
+          </td>
+    		</tr>
+    	</tbody>
+    </table>
+    <br> -->
+    <table class="table_battle" border="1" cellspacing="0" cellpadding="4">
+    	<tbody>
+    		<tr>
+    			<td colspan="5" height="200px">
+            <div align="center"><img id="enemyimg" style="filter:alpha(opacity=0);"></div>
+          </td>
+    		</tr>
+    		<tr>
+    			<td height="80" colspan="5" align="left" style="border-left-style: hidden; border-right-style: hidden;">
+            <!-- <a href="#" id="btn_attack" class="button_push navy" onClick="attack();return false;">攻撃</a>&emsp;
+            <a href="#" id="btn_defence" class="button_push navy" onClick="defence();return false;">防御</a>&emsp;
+            <a href="#" id="btn_magic" class="button_push navy" onClick="magic();return false;">魔法</a>&emsp;
+            <a href="#" id="btn_item" class="button_push navy" onClick="item();return false;">道具</a>&emsp; -->
+
+            <input type="button" class="btn_command" value=" 攻撃 " name="btn_attack" onClick="attack(); return false;">&emsp;
+            <input type="button" class="btn_command" value=" 防御 " name="btn_defence" onClick="defence(); return false;">&emsp;
+            <input type="button" class="btn_command" value=" 魔法 " name="btn_magic" onClick="magic(); return false;">&emsp;
+            <input type="button" class="btn_command" value=" 道具 " name="btn_item" onClick="item(); return false;">
+
+            <!-- <input type="button" class="btn_command" value=" 攻撃 " name="btn_attack" onClick="attack(); return false;">
+          </td>
+          <td height="80" align="center" style="border-left-style: hidden; border-right-style: hidden;">
+            <input type="button" class="btn_command" value=" 防御 " name="btn_defence" onClick="defence(); return false;">
+          </td>
+          <td height="80" align="center" style="border-left-style: hidden; border-right-style: hidden;">
+            <input type="button" class="btn_command" value=" 魔法 " name="btn_magic" onClick="magic(); return false;">
+          </td>
+          <td height="80" align="center" style="border-left-style: hidden; border-right-style: hidden;">
+            <input type="button" class="btn_command" value=" 道具 " name="btn_item" onClick="item(); return false;">
+          </td>
+          <td style="border-left-style: hidden; border-right-style: hidden;"></td> -->
+          </td>
+    		</tr>
+        <tr>
+          <td width="20%" align="center">名前</td>
+          <td width="20%" align="center">職業</td>
+          <td width="20%" align="center">レベル</td>
+          <td width="20%" align="center">HP</td>
+          <td width="20%" align="center">MP</td>
+        </tr>
+        <tr height="30">
+          <td id="tb_name" align="center"></td>
+          <td id="tb_job" align="center"></td>
+          <td id="tb_level" align="center"></td>
+          <td id="tb_hp" align="center"></td>
+          <td id="tb_mp" align="center"></td>
+        </tr>
+    		<tr>
+    			<td id="tb_result" colspan="5" height="150" valign="top"></td>
+    		</tr>
+    	</tbody>
+    </table>
+  </div>
+
+  <!-- 魔法用ポップアップ -->
+  <div id="popup_magic" class="whitepopup" style="display:none">
+    <center>
+      魔法リスト<br><br>
+      <table class="table_magic" border="1">
+      	<tbody>
+      		<tr>
+      			<td width="25%"　height="30" align="center">まほう</td>
+      			<td width="25%" height="30" align="center">説明</td>
+      			<td width="25%" height="30" align="center">消費MP</td>
+            <td width="25%" height="30">
+      		</tr>
+      		<tr>
+      			<td height="30" align="center">ファイア</td>
+      			<td height="30" align="left">炎で相手を攻撃する</td>
+      			<td height="30" align="center">2</td>
+            <td id="tb_fire01" class="tb_magic_select" height="30" align="center"><a href="" class="magicselect" data-magic="ファイア" style="text-decoration:none;">使う！</a></td>
+      		</tr>
+      		<tr>
+            <td height="30" align="center">サンダー</td>
+      			<td height="30" align="left">雷で相手を攻撃する</td>
+      			<td height="30" align="center">4</td>
+            <td id="tb_blizzard01" class="tb_magic_select" height="30" align="center"><a href="" class="magicselect" data-magic="サンダー" style="text-decoration:none;">使う！</a></td>
+      		</tr>
+      		<tr>
+      			<td></td>
+      			<td></td>
+      			<td></td>
+            <td></td>
+      		</tr>
+      		<tr>
+      			<td></td>
+      			<td></td>
+      			<td></td>
+            <td></td>
+      		</tr>
+      	</tbody>
+      </table>
+      <br>
+      <br>
+      <span id="mpemptyresult"></span>
+      <br>
+      <br>
+      <a href="#" class="popupclose" style="text-decoration:none;">閉じる</a>
+    </center>
+
+  </div>
+
+  <!-- 魔法・戦士用ポップアップ -->
+  <div id="popup_none_magic" class="whitepopup" style="display:none">
+    <center>
+      魔法は使えません
+    </center>
+  </div>
+</body>
+
+</html>
